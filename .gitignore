@@ -1,0 +1,13 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+env/
+
+# Archives
+*.zip
+
+# IDE / OS
+.idea/
+.vscode/
+.DS_Store
