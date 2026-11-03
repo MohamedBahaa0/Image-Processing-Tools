@@ -1,63 +1,29 @@
 # Image Processing Tools
 
-## Description
-Image Processing Tools is a Python-based application that provides a graphical user interface (GUI) for performing various image processing operations. It includes functions for Fourier transformations, filtering, ROI analysis, and morphological operations like erosion and dilation. Additionally, it offers a range of features for image enhancement, restoration, segmentation, measurements, registration, compression, and visualization.
+A desktop GUI (Python + PyQt5) that implements classic image-processing and medical-imaging algorithms from scratch with NumPy, built during my Systems & Biomedical Engineering studies at Cairo University.
+
+![Python](https://img.shields.io/badge/Python-3-blue) ![PyQt5](https://img.shields.io/badge/GUI-PyQt5-green) ![License](https://img.shields.io/badge/license-MIT-lightgrey)
 
 ## Features
 
-### Image Enhancement:
-- Histogram equalization for improving contrast and distribution of pixel intensities.
-- Adaptive histogram equalization for enhancing local contrast in different regions.
-- Gamma correction for adjusting overall brightness and contrast.
+| Area | Implemented |
+|---|---|
+| Geometry | Nearest-neighbour and bilinear interpolation (zoom), rotation, shearing |
+| Intensity | Histogram and histogram equalization |
+| Spatial filtering | Smoothing and sharpening filters, noise generation and median filtering |
+| Frequency domain | Fourier transform, FFT filtering, notch-reject filter for periodic noise |
+| ROI analysis | Select a region and inspect its noise statistics and histogram |
+| Medical imaging | Shepp-Logan phantom, sinogram (Radon transform), laminogram / back-projection |
+| Morphology | Erosion, dilation, opening, closing |
+| Input | Standard images and DICOM files (pydicom) |
 
-### Image Restoration:
-- Noise reduction using filters such as median filter, Gaussian filter, and bilateral filter.
-- Image deblurring to recover sharpness and reduce blurriness caused by motion or defocus.
+## Run
 
-### Image Segmentation:
-- Thresholding techniques for separating objects from the background based on pixel intensity.
-- Edge detection algorithms like Canny, Sobel, and Laplacian for detecting and extracting edges.
-- Clustering algorithms such as K-means and watershed for grouping pixels into meaningful regions.
+```bash
+pip install pyqt5 numpy matplotlib pillow pydicom scikit-image phantominator
+python Task9.py
+```
 
-### Image Measurements:
-- Calculation of image properties such as area, perimeter, centroid, and bounding box.
-- Object counting and labeling for quantifying the number of distinct objects in an image.
-- Shape analysis to extract features like circularity, elongation, and aspect ratio.
+## Tech stack
 
-### Image Registration:
-- Alignment of multiple images to compensate for geometric or spatial differences.
-- Transformation functions like translation, rotation, scaling, and affine transformations.
-
-### Image Compression:
-- Lossless compression techniques such as Huffman coding and Run-Length Encoding (RLE).
-- Lossy compression techniques like Discrete Cosine Transform (DCT) and JPEG compression.
-
-### Image Visualization:
-- Image display with zooming and panning capabilities.
-- Image annotation with text, arrows, and shapes for highlighting specific regions.
-
-## Usage
-To use the image processing tools, follow these steps:
-
-1. Install the required dependencies mentioned in the "Installation" section.
-2. Run the main application script (`main.py`) using a Python interpreter.
-3. The GUI will be displayed, providing various options for image processing.
-4. Load an image from your local system or capture one using a connected camera.
-5. Choose the desired image processing operation from the available tools.
-6. Adjust the parameters or select the region of interest (if applicable).
-7. Apply the chosen operation and view the resulting image.
-8. Save the processed image if desired.
-
-## Installation
-To install and set up the image processing tools, follow these steps:
-
-1. Clone the project repository from the GitHub URL: `https://github.com/your-username/image-processing-tools.git`.
-2. Navigate to the project directory on your local system.
-3. Create a virtual environment (optional but recommended) using `python -m venv env`.
-4. Activate the virtual environment:
-   - On Windows: `.\env\Scripts\activate`
-   - On macOS/Linux: `source env/bin/activate`
-5. Install the required dependencies by running `pip install -r requirements.txt`.
-
-## Contributing
-Contributions to this image processing tool project are welcome. If you
+Python · PyQt5 · NumPy · Matplotlib · scikit-image · pydicom
